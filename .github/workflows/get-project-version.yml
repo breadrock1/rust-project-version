@@ -14,7 +14,7 @@ jobs:
 
       - name: Get version
         id: get-version
-        uses: breadrock1/rust-project-version@v0.3
+        uses: breadrock1/rust-project-version@v0.4
         with:
           manifest-path: 'example/hello-world/Cargo.toml'
 
