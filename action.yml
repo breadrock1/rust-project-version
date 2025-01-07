@@ -24,5 +24,7 @@ runs:
         # Execute the script and capture its output
         OUTPUT=$(./get-version.sh "${{ inputs.manifest-path }}")
         
+        echo "version: $OUTPUT"
+      
         # Set the output for use in other steps
         echo "version=$OUTPUT" >> $GITHUB_OUTPUT
