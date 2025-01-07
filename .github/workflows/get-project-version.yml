@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/rust-project-version@master
+      - uses: actions/rust-project-version@v0.1
         with:
           manifest-path: example/hello-world/Cargo.toml
 
