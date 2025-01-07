@@ -5,7 +5,7 @@ author: 'breadrock1'
 inputs:
   manifest-path:
     description: 'Cargo.toml manifest file path'
-    required: false
+    required: true
     default: 'Cargo.toml'
 
 outputs:

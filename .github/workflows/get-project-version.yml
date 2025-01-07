@@ -14,9 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: breadrock1/rust-project-version@v0.1
+
+      - name: Get version
+        id: version
+        uses: breadrock1/rust-project-version@v0.1
         with:
-          manifest-path: example/hello-world/Cargo.toml
+          manifest-path: 'example/hello-world/Cargo.toml'
 
       - name: Check version is valid
         run: |
