@@ -23,4 +23,5 @@ jobs:
           echo "${{ steps.get-project-version.outputs }}"
           echo "${{ steps.get-project-version.outputs.project-version }}"
           echo "${{ toJson(steps.get-project-version.outputs) }}"
+          echo "${{ toString(steps.get-project-version.outputs) }}"
           [ "${{ steps.get-project-version.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
