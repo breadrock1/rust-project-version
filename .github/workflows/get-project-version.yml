@@ -14,12 +14,11 @@ jobs:
 
       - name: Get version
         id: get-project-version
-        uses: breadrock1/rust-project-version@v0.8
+        uses: breadrock1/rust-project-version@v0.0.1
         with:
           manifest-path: 'example/hello-world/Cargo.toml'
 
       - name: Check version is valid
         run: |
-          echo "${{ steps.get-project-version.outputs }}"
-          echo "${{ steps.get-project-version.outputs.project-version }}"
-#          [ "${{ steps.get-project-version.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
+          echo "The version is: ${{ steps.get-project-version.outputs.project-version }}"
+          [ "${{ steps.get-project-version.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
