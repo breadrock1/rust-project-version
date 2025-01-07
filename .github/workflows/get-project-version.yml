@@ -1,0 +1,23 @@
+name: get-rust-project-version
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  check-action-processing:
+    runs-on: ubuntu-latest
+
+    outputs:
+      version_output: ${{ steps.version.outputs.version }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/rust-project-version@master
+        with:
+          manifest-path: example/hello-world/Cargo.toml
+
+      - name: Check version is valid
+        run: |
+          echo ${{ steps.version.outputs.version }}

@@ -1,0 +1,28 @@
+name: 'Get rust project version'
+description: 'Current GitHub actions provides ability to get rust project version. This action useful to create release and upload artifacts.'
+author: 'breadrock1'
+
+inputs:
+  manifest-path:
+    description: 'Cargo.toml manifest file path'
+    required: false
+    default: 'Cargo.toml'
+
+outputs:
+  version:
+    description: 'There is rust project version'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run the shell script
+      id: version
+      shell: bash
+      run: |
+        chmod +x get-version.sh
+        
+        # Execute the script and capture its output
+        OUTPUT=$(./get-version.sh)
+        
+        # Set the output for use in other steps
+        echo "version=$OUTPUT" >> $GITHUB_OUTPUT
