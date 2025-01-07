@@ -22,7 +22,7 @@ runs:
         chmod +x get-version.sh
         
         # Execute the script and capture its output
-        OUTPUT=$(./get-version.sh)
+        OUTPUT=$(./get-version.sh "${{ inputs.manifest-path }}")
         
         # Set the output for use in other steps
         echo "version=$OUTPUT" >> $GITHUB_OUTPUT
