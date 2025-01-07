@@ -29,4 +29,4 @@ runs:
         # Set the output for use in other steps
         echo "version=$OUTPUT" >> $GITHUB_OUTPUT
         
-        echo "version: $GITHUB_OUTPUT"
+        cat $GITHUB_OUTPUT
