@@ -21,5 +21,9 @@ runs:
       run: |
         chmod +x get-version.sh
         
+        echo "${{ outputs.project-version }}"
+        
         # Execute the script and capture its output
         ./get-version.sh "${{ inputs.manifest-path }}"
+        
+        echo "${{ outputs.project-version }}"
