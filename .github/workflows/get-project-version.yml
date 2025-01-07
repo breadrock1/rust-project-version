@@ -9,9 +9,6 @@ jobs:
   check-action-processing:
     runs-on: ubuntu-latest
 
-    outputs:
-      version_output: ${{ steps.version.outputs.version }}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -24,4 +21,4 @@ jobs:
       - name: Check version is valid
         run: |
           echo "${{ steps.get-version.outputs.version }}"
-          [ "${{ steps.version.outputs.version }}" = "0.1.0" ] && echo 'is valid version'
+          [ "${{ steps.get-version.outputs.version }}" = "0.1.0" ] && echo 'is valid version'
