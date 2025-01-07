@@ -23,4 +23,4 @@ jobs:
 
       - name: Check version is valid
         run: |
-          echo ${{ steps.version.outputs.version }}
+          [ "${{ steps.version.outputs.version }}" = "0.1.0" ] && echo 'is valid version'
