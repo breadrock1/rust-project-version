@@ -20,5 +20,6 @@ jobs:
 
       - name: Check version is valid
         run: |
+          echo "The test value is: ${{ steps.get-project-version.outputs.test }}"
           echo "The version is: ${{ steps.get-project-version.outputs.project-version }}"
           [ "${{ steps.get-project-version.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
