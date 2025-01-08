@@ -18,7 +18,7 @@ runs:
   using: 'composite'
   steps:
     - name: Run the shell script
-      id: get-version
+      id: run-script
       shell: bash
       run: |
         chmod +x get-version.sh
