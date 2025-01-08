@@ -13,13 +13,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Get version
-        id: get-project-version
-        uses: breadrock1/rust-project-version@v0.0.3
+        id: custom-action
+        uses: breadrock1/rust-project-version@v0.0.4
         with:
           manifest-path: 'example/hello-world/Cargo.toml'
 
       - name: Check version is valid
         run: |
-          echo "The test value is: ${{ steps.get-project-version.outputs.test }}"
-          echo "The version is: ${{ steps.get-project-version.outputs.project-version }}"
-          [ "${{ steps.get-project-version.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
+          echo "The test value is: ${{ steps.custom-action.outputs.test }}"
+          echo "The version is: ${{ steps.custom-action.outputs.project-version }}"
+          [ "${{ steps.custom-action.outputs.project-version }}" = "0.1.0" ] && echo 'is valid version'
