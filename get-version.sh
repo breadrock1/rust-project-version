@@ -7,3 +7,5 @@ OUTPUT=$(cargo pkgid --manifest-path $MANIFEST_PATH | cut -d# -f2 | cut -d: -f2)
 
 echo "project-version: $OUTPUT"
 echo "project-version=$OUTPUT" >> $GITHUB_OUTPUT
+
+echo "test=kek" >> $GITHUB_OUTPUT

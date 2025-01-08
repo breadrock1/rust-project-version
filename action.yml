@@ -9,6 +9,8 @@ inputs:
     default: 'Cargo.toml'
 
 outputs:
+  test:
+    description: 'Test output value'
   project-version:
     description: 'There is rust project version'
 
